@@ -63,7 +63,13 @@ const NSInteger kTableMessageTextLineCount = 2;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
-}
+  if (_item != object) {
 
+    [super setObject:object];  
+
+    self.textLabel.backgroundColor = TTSTYLEVAR(backgroundTextColor);
+    self.detailTextLabel.backgroundColor = TTSTYLEVAR(backgroundTextColor);
+  }
+}
 
 @end
